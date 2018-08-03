@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1050376749542",
+    "firebase_url": "https://photoblock-56ea2.firebaseio.com",
+    "project_id": "photoblock-56ea2",
+    "storage_bucket": "photoblock-56ea2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050376749542:android:b6dac8479c95372a",
+        "android_client_info": {
+          "package_name": "kh.com.rupp.ckcc.photoblock"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050376749542-3rlm9ni2nrret3tknjv49b57hfiie9c1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kh.com.rupp.ckcc.photoblock",
+            "certificate_hash": "2f4251a04bee032453cbfccb45f11f7dba5d55d7"
+          }
+        },
+        {
+          "client_id": "1050376749542-kt6s1f8nq2ombl65e8n8ggdcvqcg9lu6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB2vKkHEAL9RQdr04kxkUpjJYthYPkH1pQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050376749542-kt6s1f8nq2ombl65e8n8ggdcvqcg9lu6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
