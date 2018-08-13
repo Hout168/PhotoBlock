@@ -30,7 +30,7 @@
             android:screenOrientation="portrait" />
         <activity android:name=".RegisterActivity" />
         <activity android:name=".SetupActivity" />
-        <activity android:name=".NewPostActivity"></activity>
+        <activity android:name=".NewPostActivity" android:parentActivityName=".MainActivity"></activity>
     </application>
 
 </manifest>

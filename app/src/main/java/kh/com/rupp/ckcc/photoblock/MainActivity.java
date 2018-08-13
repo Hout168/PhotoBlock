@@ -2,7 +2,10 @@ package kh.com.rupp.ckcc.photoblock;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -32,6 +35,12 @@ public class MainActivity extends AppCompatActivity implements Serializable{
     private FirebaseAuth mAuth;
     private FirebaseFirestore firebaseFirestore;
 
+    private BottomNavigationView mainBottomNav;
+
+    private HomeFragment homeFragment;
+    private NotificationFragment notificationFragment;
+    private AccountFragment accountFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +60,34 @@ public class MainActivity extends AppCompatActivity implements Serializable{
             public void onClick(View v) {
                 Intent newPostIntent = new Intent(MainActivity.this,NewPostActivity.class);
                 startActivity(newPostIntent);
+            }
+        });
+
+        mainBottomNav = findViewById(R.id.mainBottomNav);
+
+        //FRAGMENT
+        homeFragment = new HomeFragment();
+        notificationFragment = new NotificationFragment();
+        accountFragment = new AccountFragment();
+
+        mainBottomNav.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()){
+                    case R.id.bottom_action_home:
+                        replaceFragment(homeFragment);
+                        return true;
+                    case R.id.bottom_action_notification:
+                        replaceFragment(notificationFragment);
+                        return true;
+                    case R.id.bottom_action_account:
+                        replaceFragment(accountFragment);
+                        return true;
+
+                        default:
+                            return false;
+                }
+
             }
         });
 
@@ -124,5 +161,12 @@ public class MainActivity extends AppCompatActivity implements Serializable{
         Intent loginIntent = new Intent(MainActivity.this,LoginActivity.class);
         startActivity(loginIntent);
         finish();
+    }
+
+    private void replaceFragment(Fragment fragment){
+
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.mainContainer, fragment);
+        fragmentTransaction.commit();
     }
 }

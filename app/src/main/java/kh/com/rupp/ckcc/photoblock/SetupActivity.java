@@ -206,7 +206,7 @@ public class SetupActivity extends AppCompatActivity implements Serializable{
 
     }
 
-    // Image Cropper
+    // Bring Image Cropper
     private void imageCropper() {
         CropImage.activity()
                 .setGuidelines(CropImageView.Guidelines.ON)
